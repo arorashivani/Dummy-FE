@@ -1,20 +1,44 @@
 <html ng-app="app">
 <head>
     <title>EMS</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
 </head>
 <body style="background-color:#E6E6FA">
        <div class="container">
           <div ng-view></div>
        </div>
+
        <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
        <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+       <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
        <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
        <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="/js/lazy-scroll.js"></script>
+       <!--Environment Configuration -->
+       <script type="text/javascript" src="/app/config/envConfig.js"></script>
+       <!--Routing -->
        <script type="text/javascript" src="/app.config.js"></script>
+       <!--Services -->
+       <script type="text/javascript" src="/app/common/services/apiService.js"></script>
+       <!--LocalStorage -->
+       <script type="text/javascript" src="/app/common/localStorage.js"></script>
+       <!--Constant -->
+       <script type="text/javascript" src="/app/common/constant.js"></script>
+       <!--Directives -->
+       <script type="text/javascript" src="/app/common/directives/headerDirective.js"></script>
+       <!--Controllers -->
        <script type="text/javascript" src="/app/admin/controllers/loginCtrl.js"></script>
        <script type="text/javascript" src="/app/admin/controllers/dashboardCtrl.js"></script>
-       <script type="text/javascript" src="/app/admin/controllers/userCtrl.js"></script>
+       <script type="text/javascript" src="/app/admin/controllers/viewUserCtrl.js"></script>
+       <script type="text/javascript" src="/app/admin/controllers/createUserCtrl.js"></script>
+       <!--Model -->
+       <script type="text/javascript" src="/app/admin/models/user.js"></script>
+
 </body>
 </html>

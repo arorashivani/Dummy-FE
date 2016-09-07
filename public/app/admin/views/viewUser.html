@@ -1,27 +1,51 @@
-<hr>
-<div class="row">
-<table class="table-responsive">
-    <thead>
-    <tr>
-        <th class="col-xs-2">ID</th>
-        <th class="col-xs-2">USER NAME</th>
-        <th class="col-xs-2">FIRST NAME</th>
-        <th class="col-xs-2">LAST NAME</th>
-        <th class="col-xs-2">ROLE</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="user in userList" ng-class-odd="'alt'">
-        <td class="col-xs-2 cap">{{user.id}}</td>
-        <td class="col-xs-2 cap">{{user.userName}}</td>
-        <td class="col-xs-2 strong">{{user.firstName}}</td>
-        <td class="col-xs-2">{{user.lastName}}</td>
-        <td class="col-xs-2">{{user.role}}</td>
-        <td><a class="btn btn-small btn-primary">edit</a></td>
-        <td><a class="btn btn-small btn-danger">delete</a></td>
-    </tr>
-    </tbody>
-</table>
-    <a ng-click="createNewUser()" class="btn btn-small">create new user</a>
-</div>
-</hr>
+    <header></header>
+    <h2 align="center">Search User</h2>
+    <div class="success-msg" ng-if="isSuccess">{{showMessage}}</div>
+    <div class="success-msg" ng-if="isError">{{showMessage}}</div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label><strong>Search User</strong></label>
+                <input type="text" placeholder="Search User" class="form-control">
+            </div>
+        </div>
+        <div style="border-right:0px solid #fff;" class="col-md-2">
+            <div class="form-group">
+                <label style="color:#fff; width:100%;">&nbsp;</label>
+                <button data-target="#findpharmacy" data-toggle="collapse" class="btn btn-primary " type="button">Search</button>
+            </div>
+        </div>
+        <div>
+            <h1><a style="background-color:#9acd32; margin: 5px;" href="/admin/createUser" class="btn btn-small">Create New User</a></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table style="margin:auto;" class="table table-bordered">
+                    <thead>
+                    <tr><th colspan="8" style="text-align:center; background-color:#107fc9; color:#fff;">Search user result</th></tr>
+                    <tr>
+                        <th class="col-xs-2">USER NAME</th>
+                        <th class="col-xs-2">FIRST NAME</th>
+                        <th class="col-xs-2">ROLE</th>
+                        <th class="col-xs-2">LOCATION</th>
+                        <th class="col-xs-2">ACTION</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <div lazy-scroll="getUserPageList()">
+                    <tr ng-repeat="user in userData" ng-class-odd="'alt'">
+                        <td class="col-xs-2 cap">{{user.username}}</td>
+                        <td class="col-xs-2 strong">{{user.fName}}</td>
+                        <td class="col-xs-2">{{user.role}}</td>
+                        <td class="col-xs-2">{{user.location}}</td>
+                        <td><a href="/admin/users/editUser/{{user.id}}" class="btn btn-small btn-primary">edit</a>
+                        <a class="btn btn-small btn-danger">delete</a></td>
+                    </tr>
+                    </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

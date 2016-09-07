@@ -1,0 +1,59 @@
+<header></header>
+<h2 align="center">Create User</h2>
+<div class="bs-example">
+    <form class="form-horizontal" name="myForm" ng-submit="createUser(myForm)" novalidate>
+        <fieldset>
+            <div class="form-group" ng-class="{'has-error': myForm.username.$invalid  && myForm.username.$dirty || myForm.$submitted && myForm.username.$error.required}">
+                <label for="inputUName" class="control-label col-xs-2">User Name</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="username" ng-model="userAccount.username" placeholder="User Name" required>
+                    <p class="error-msg" ng-show="myForm.$submitted && myForm.username.$error.required">User Name is Required</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': myForm.firstName.$invalid  && myForm.firstName.$dirty || myForm.$submitted && myForm.firstName.$error.required}">
+                <label for="inputFName" class="control-label col-xs-2">First Name</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="firstName" ng-model="userAccount.fName" placeholder="First Name" required>
+                    <p class="error-msg" ng-show="myForm.$submitted && myForm.firstName.$error.required">First Name is Required</p>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': myForm.password.$invalid  && myForm.password.$dirty || myForm.$submitted && myForm.password.$error.required}">
+                <label for="inputPassword" class="control-label col-xs-2">Password</label>
+                <div class="col-xs-6">
+                    <input type="password" class="form-control" name="password" ng-model="userAccount.password" placeholder="Password" required>
+                    <p class="error-msg" ng-show="myForm.$submitted && myForm.password.$error.required">Password is Required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputCPassword" class="control-label col-xs-2">Conform Password</label>
+                <div class="col-xs-6">
+                    <input type="password" class="form-control"  placeholder="Conform Password">
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': myForm.role.$invalid  && myForm.role.$dirty || myForm.$submitted && myForm.role.$error.required}">
+            <label for="selectRole" class="control-label col-xs-2">Role</label>
+                 <div class="col-xs-6">
+                    <select class="form-control" name="role" ng-model="userAccount.role" name="role" required >
+                        <option value="">Please Select</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Reporter">Reporter</option>
+                    </select>
+                    <p class="error-msg" ng-show="myForm.$submitted && myForm.role.$error.required">Role is Required</p>
+                 </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': myForm.location.$invalid  && myForm.location.$dirty || myForm.$submitted && myForm.location.$error.required}">
+            <label for="inputLocation" class="control-label col-xs-2">Location</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="location" ng-model="userAccount.location" placeholder="Location" required>
+                    <p class="error-msg" ng-show="myForm.$submitted && myForm.location.$error.required">Location is Required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <input type="reset" class="btn btn-primary" value="Reset" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
